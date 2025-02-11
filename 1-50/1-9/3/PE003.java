@@ -1,14 +1,14 @@
 public class PE003 {
     public static void main(String args[]) {
-        System.out.println(primeFactors(600851475143L));
-    }
+        long target = 600851475143L;
+        long i = 2;
 
-    public static int primeFactors(long number) {
-        int i;
-        for (i = 2; i < num; i++) {
-            if (num % i == 0)
-                num /= i;
+        while (i * i <= target) { // Only check up to sqrt(target)
+            if (target % i == 0)
+                target /= i;
+            else i++;
         }
-        return i;
+        
+        System.out.println(target);
     }
 }
