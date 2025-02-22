@@ -18,7 +18,7 @@ public class PE004 {
         int largestProduct = 1;
 
         for (int i = biggest; i > smallest; i--) {
-            for (int j = biggest; j > smallest; j--) {
+            for (int j = i; j > largestProduct / i; j--) { // avoid traversing through products < current largestProduct & repeating product pairs
                 product = i * j;
                 if (isPal() && product > largestProduct) {
                     largestProduct = product;
